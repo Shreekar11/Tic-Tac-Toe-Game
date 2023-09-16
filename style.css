@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1{
+    font-family: 'Poppins', sans-serif;
+}
+
+.fa {
+    font-size: 64px;
+    color: black;
+}
+
+.reset{
+    padding: 8px;
+    font-family: 'Poppins', sans-serif;
+    /* border-radius: 30%; */
+}
+
+.reset:hover{
+    opacity: 0.8;
+}
