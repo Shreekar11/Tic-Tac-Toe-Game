@@ -1,3 +1,7 @@
+let player1 = prompt("Enter Player 1");
+let player2 = prompt("Enter Player 2");
+
+$("#screen").text(player1 + " Turn Follows !!");
 
 var nextGame = false; 
 
@@ -13,12 +17,13 @@ $("button").click(function(){
         playSound();
 
         if($(this).hasClass("fa fa-check") || $(this).hasClass("fa fa-times")){
+
             $(this).css("background-color", "red");
             setTimeout(() => {
                 $(this).css("background-color", "white");
             }, 300);
         }else if(flag == true){
-            $("#screen").text("Player 2 Turns Follow !!");    
+            $("#screen").text(player2 + " Turns Follow !!");    
             
             $(this).addClass("fa fa-check");
             flag = false;
@@ -29,7 +34,7 @@ $("button").click(function(){
             console.log(sym);
             if(check(sym)){
     
-                $("#screen").text("Player 1 Wins !! 🎉🎊")
+                $("#screen").text(player1 + " Wins !! 🎉🎊")
     
                 winSound();
     
@@ -38,7 +43,7 @@ $("button").click(function(){
             }
     
         }else{
-            $("#screen").text("Player 1 Turns Follow !!");
+            $("#screen").text(player1 + " Turns Follow !!");
     
             $(this).addClass("fa fa-times");
             flag = true;
@@ -46,7 +51,7 @@ $("button").click(function(){
             var sym = "fa fa-times";
             if(check(sym)){
     
-                $("#screen").text("Player 2 Wins !! 🎉🎊")
+                $("#screen").text(player2 + " Wins !! 🎉🎊")
     
                 winSound();
     
@@ -150,7 +155,9 @@ function check(symbol){
 }
 
 function reset(){
-    $("#screen").text("Player 1 Turn Follows !!");
+    player1 = prompt("Enter Player 1");
+    player2 = prompt("Enter Player 2");
+    $("#screen").text(player1 + " Turn Follows !!");
     $("#screen").css("background-color", "transparent");
     $(".r").removeClass("fa fa-check");
     $(".r").removeClass("fa fa-times");
